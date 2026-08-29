@@ -38,7 +38,7 @@
           <aside className="border-t border-black/15 pt-5">
             <span className="eyebrow">Perspectiva</span>
 
-            <p className="mt-5 text-2xl font-medium leading-9 tracking-[-0.025em]">
+            <p className="mt-5 text-2xl font-medium leading-9 tracking-tight">
               Antes de pensar na tecnologia, procuro entender o problema,
               o processo e quem precisa da solução.
             </p>
