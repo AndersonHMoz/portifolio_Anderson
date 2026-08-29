@@ -22,13 +22,7 @@
   },
   {
     title: "Ferramentas",
-    skills: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "PowerShell",
-      "Vercel",
-    ],
+    skills: ["Git", "GitHub", "VS Code", "PowerShell", "Vercel"],
   },
   {
     title: "Outras competências",
@@ -42,9 +36,9 @@
   },
 ];
 
-export function Skills() {
+export default function Skills() {
   return (
-    <section id="stack" className="section-border py-32">
+    <section id="skills" className="section-border py-32">
       <div className="container-page">
         <span className="eyebrow">04 / Stack & competências</span>
 

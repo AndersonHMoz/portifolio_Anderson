@@ -1,91 +1,84 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const navigation = [
-  { label: "Sobre", href: "#sobre" },
-  { label: "Experiência", href: "#experiencia" },
+  { label: "Work", href: "#projects" },
   { label: "Stack", href: "#stack" },
-  { label: "Projetos", href: "#projetos" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
-export function Navbar() {
-  const [open, setOpen] = useState(false);
-
+export default function Navbar() {
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <div className="container-page">
-        <nav className="flex h-24 items-center justify-between border-b border-black/10">
-          <Link
-            href="/"
-            className="text-sm font-bold tracking-[-0.02em]"
-            aria-label="Anderson Moz - início"
-          >
-            ANDERSON MOZ
-          </Link>
+    <header className="relative z-50 border-b border-white/10 bg-[#050506]/90 backdrop-blur-xl">
+      <div className="container flex h-16 items-center justify-between sm:h-17">
+        {/* Brand */}
+        <Link
+          href="/"
+          aria-label="Anderson Moz - início"
+          className="group flex shrink-0 items-center gap-3"
+        >
+          <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/3 font-mono text-[10px] font-bold tracking-[-0.04em] text-white transition-all duration-300 group-hover:border-lime-300/40">
+            <span className="relative z-10">AM</span>
 
-          <div className="hidden items-center gap-8 md:flex">
-            {navigation.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-xs font-medium uppercase tracking-[0.12em] text-black/60 transition-colors hover:text-black"
-              >
-                {item.label}
-              </a>
-            ))}
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 translate-y-full bg-lime-300/8 transition-transform duration-300 group-hover:translate-y-0"
+            />
+          </span>
 
-            <a
-              href="#contato"
-              className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em]"
+          <span className="hidden text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75 transition-colors duration-300 group-hover:text-white sm:block">
+            Anderson Moz
+          </span>
+        </Link>
+
+        {/* Navigation */}
+        <nav
+          aria-label="Navegação principal"
+          className="hidden items-center gap-7 md:flex"
+        >
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group relative py-2 font-mono text-[9px] uppercase tracking-[0.16em] text-white/45 transition-colors duration-300 hover:text-white"
             >
-              Contato
-              <ArrowUpRight
-                size={15}
-                strokeWidth={1.8}
-                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </a>
-          </div>
+              {item.label}
 
-          <button
-            type="button"
-            onClick={() => setOpen((current) => !current)}
-            className="flex h-10 w-10 items-center justify-center md:hidden"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={open}
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+              <span
+                aria-hidden="true"
+                className="absolute bottom-0 left-0 h-px w-0 bg-lime-300 transition-all duration-300 group-hover:w-full"
+              />
+            </Link>
+          ))}
         </nav>
 
-        {open && (
-          <div className="border-b border-black/10 bg-[#f4f1eb] py-6 md:hidden">
-            <div className="flex flex-col gap-5">
-              {navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm font-medium uppercase tracking-[0.12em]"
-                >
-                  {item.label}
-                </a>
-              ))}
+        {/* Status + CTA */}
+        <div className="flex shrink-0 items-center gap-3">
+          <div className="hidden items-center gap-2 lg:flex">
+            <span
+              aria-hidden="true"
+              className="h-1.5 w-1.5 rounded-full bg-lime-300 shadow-[0_0_10px_rgba(216,255,62,0.7)]"
+            />
 
-              <a
-                href="#contato"
-                onClick={() => setOpen(false)}
-                className="flex items-center gap-2 text-sm font-bold uppercase tracking-[0.12em]"
-              >
-                Contato
-                <ArrowUpRight size={16} />
-              </a>
-            </div>
+            <span className="font-mono text-[8px] uppercase tracking-[0.14em] text-white/35">
+              Available
+            </span>
           </div>
-        )}
+
+          <Link
+            href="#contact"
+            className="group inline-flex min-h-9 items-center gap-2 rounded-full border border-white/15 bg-white/3 px-3.5 text-[9px] font-semibold uppercase tracking-[0.08em] text-white/75 transition-all duration-300 hover:-translate-y-0.5 hover:border-lime-300/40 hover:bg-lime-300/5 hover:text-lime-300 sm:px-4"
+          >
+            Let&apos;s talk
+
+            <span
+              aria-hidden="true"
+              className="h-1 w-1 rounded-full bg-white/30 transition-colors duration-300 group-hover:bg-lime-300"
+            />
+          </Link>
+        </div>
       </div>
     </header>
   );
