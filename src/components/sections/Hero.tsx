@@ -1,12 +1,7 @@
-
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowDown,
-  ArrowUpRight,
-  Terminal,
-} from "lucide-react";
+import { ArrowDown, ArrowUpRight, Terminal } from "lucide-react";
 
 const codeLines = [
   {
@@ -25,9 +20,7 @@ const codeLines = [
     content: (
       <>
         <span className="text-white/75"> name:</span>{" "}
-        <span className="text-emerald-300">
-          &quot;Anderson Moz&quot;
-        </span>
+        <span className="text-emerald-300">&quot;Anderson Moz&quot;</span>
         <span className="text-white/70">,</span>
       </>
     ),
@@ -118,91 +111,169 @@ export default function Hero() {
       </div>
 
       <div className="container relative">
-        <div className="grid min-h-[calc(100vh-76px)] items-center gap-16 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-24">
+        <div
+          className="
+            grid
+            min-h-[calc(100svh-76px)]
+            items-center
+            gap-14
+            py-14
+
+            sm:gap-16
+            sm:py-20
+
+            lg:grid-cols-[1.15fr_0.85fr]
+            lg:gap-20
+            lg:py-24
+          "
+        >
           {/* =========================================================
               MAIN CONTENT
           ========================================================= */}
-          <div className="relative">
+          <div className="relative min-w-0">
             {/* Availability */}
-            <div className="flex items-center gap-3">
+            <div className="flex min-w-0 items-center gap-3">
               <span
                 aria-hidden="true"
-                className="relative flex h-2 w-2"
+                className="relative flex h-2 w-2 shrink-0"
               >
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-300/60" />
 
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-lime-300 shadow-[0_0_12px_rgba(216,255,62,0.8)]" />
               </span>
 
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+              <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-white/70 sm:text-[10px] sm:tracking-[0.18em]">
                 Available for CLT · PJ · Freelance
               </span>
             </div>
 
             {/* Name */}
-            <h1 className="mt-8 text-[clamp(4rem,11vw,9.5rem)] font-bold leading-[0.78] tracking-[-0.075em] text-white">
+            <h1
+              className="
+                mt-7
+                text-[clamp(3.5rem,18vw,9.5rem)]
+                font-bold
+                leading-[0.82]
+                tracking-[-0.065em]
+                text-white
+
+                sm:mt-8
+                sm:text-[clamp(4rem,11vw,9.5rem)]
+                sm:tracking-[-0.075em]
+              "
+            >
               Anderson
               <br />
-              <span className="text-white/45">
-                Moz
-              </span>
-              <span className="text-lime-300">
-                .
-              </span>
+
+              <span className="text-white/45">Moz</span>
+              <span className="text-lime-300">.</span>
             </h1>
 
             {/* Role */}
-            <div className="mt-10">
+            <div className="mt-8 sm:mt-10">
               <p className="max-w-2xl text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-3xl">
                 Full Stack Developer
               </p>
 
-              <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-                Construo aplicações web, APIs e sistemas de negócio com
-                foco em arquitetura, performance e código que aguenta
-                crescer.
+              <p className="mt-3 max-w-xl text-sm leading-7 text-white/70 sm:mt-4 sm:text-base">
+                Construo aplicações web, APIs e sistemas de negócio com foco
+                em arquitetura, performance e código que aguenta crescer.
               </p>
             </div>
 
             {/* Stack */}
-            <div className="mt-7 flex max-w-2xl flex-wrap gap-x-4 gap-y-2 font-mono text-[10px] font-semibold uppercase tracking-[0.13em] text-white/65">
+            <div
+              className="
+                mt-6
+                flex
+                max-w-2xl
+                flex-wrap
+                gap-x-3
+                gap-y-2
+                font-mono
+                text-[9px]
+                font-semibold
+                uppercase
+                tracking-[0.11em]
+                text-white/65
+
+                sm:mt-7
+                sm:gap-x-4
+                sm:text-[10px]
+                sm:tracking-[0.13em]
+              "
+            >
               <span>PHP</span>
 
-              <span className="text-lime-300">
-                ·
-              </span>
+              <span className="text-lime-300">·</span>
 
               <span>Next.js</span>
 
-              <span className="text-lime-300">
-                ·
-              </span>
+              <span className="text-lime-300">·</span>
 
               <span>TypeScript</span>
 
-              <span className="text-lime-300">
-                ·
-              </span>
+              <span className="text-lime-300">·</span>
 
               <span>Node.js</span>
 
-              <span className="text-lime-300">
-                ·
-              </span>
+              <span className="text-lime-300">·</span>
 
               <span>PostgreSQL</span>
             </div>
 
             {/* CTAs */}
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div
+              className="
+                mt-8
+                flex
+                w-full
+                flex-col
+                items-stretch
+                gap-3
+
+                xs:flex-row
+
+                sm:mt-10
+                sm:flex-wrap
+                sm:items-center
+                sm:gap-3
+              "
+            >
               {/* Primary CTA */}
               <Link
                 href="#projects"
-                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-lime-300 px-6 py-3.5 text-sm font-bold text-black shadow-[0_8px_30px_rgba(216,255,62,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-lime-200 hover:shadow-[0_14px_40px_rgba(216,255,62,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050506]"
+                className="
+                  group
+                  inline-flex
+                  min-h-12
+                  w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-full
+                  bg-lime-300
+                  px-6
+                  py-3.5
+                  text-sm
+                  font-bold
+                  text-black
+                  shadow-[0_8px_30px_rgba(216,255,62,0.18)]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:bg-lime-200
+                  hover:shadow-[0_14px_40px_rgba(216,255,62,0.28)]
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-lime-300
+                  focus-visible:ring-offset-2
+                  focus-visible:ring-offset-[#050506]
+
+                  sm:w-auto
+                "
               >
-                <span className="font-bold text-black">
-                  Ver projetos
-                </span>
+                <span className="font-bold text-black">Ver projetos</span>
 
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black text-lime-300 transition-transform duration-300 group-hover:translate-x-0.5">
                   <ArrowUpRight
@@ -216,11 +287,36 @@ export default function Hero() {
               {/* Secondary CTA */}
               <Link
                 href="#contact"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/25 bg-white/8 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-white/45 hover:bg-white/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050506]"
+                className="
+                  inline-flex
+                  min-h-12
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-white/25
+                  bg-white/8
+                  px-6
+                  py-3.5
+                  text-sm
+                  font-semibold
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-white/45
+                  hover:bg-white/12
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-white/30
+                  focus-visible:ring-offset-2
+                  focus-visible:ring-offset-[#050506]
+
+                  sm:w-auto
+                "
               >
-                <span className="text-white">
-                  Vamos conversar
-                </span>
+                <span className="text-white">Vamos conversar</span>
               </Link>
             </div>
           </div>
@@ -228,14 +324,27 @@ export default function Hero() {
           {/* =========================================================
               CODE VISUAL
           ========================================================= */}
-          <div className="relative">
+          <div className="relative min-w-0 w-full">
             {/* Ambient glow */}
             <div
               aria-hidden="true"
-              className="absolute -inset-12 rounded-full bg-lime-300/4 blur-3xl"
+              className="absolute -inset-8 rounded-full bg-lime-300/4 blur-3xl sm:-inset-12"
             />
 
-            <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#08090c] shadow-2xl">
+            {/* Terminal */}
+            <div
+              className="
+                relative
+                w-full
+                max-w-full
+                overflow-hidden
+                rounded-2xl
+                border
+                border-white/15
+                bg-[#08090c]
+                shadow-2xl
+              "
+            >
               {/* Terminal header */}
               <div className="flex h-12 items-center justify-between border-b border-white/10 px-4">
                 <div className="flex items-center gap-2">
@@ -250,6 +359,7 @@ export default function Hero() {
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
+
                   developer.ts
                 </div>
 
@@ -257,12 +367,25 @@ export default function Hero() {
               </div>
 
               {/* Code */}
-              <div className="overflow-x-auto px-4 py-6 sm:px-6 sm:py-8">
-                <div className="min-w-107.5 space-y-2 font-mono text-[10px] leading-6 sm:text-[11px]">
+              <div className="max-w-full overflow-x-auto px-3 py-5 sm:px-6 sm:py-8">
+                <div
+                  className="
+                    min-w-97.5
+                    space-y-1.5
+                    font-mono
+                    text-[9px]
+                    leading-6
+
+                    xs:text-[10px]
+                    sm:min-w-107.5
+                    sm:space-y-2
+                    sm:text-[11px]
+                  "
+                >
                   {codeLines.map((line) => (
                     <div
                       key={line.number}
-                      className="flex gap-5"
+                      className="flex gap-3 sm:gap-5"
                     >
                       <span className="w-5 shrink-0 select-none text-right text-white/30">
                         {line.number}
@@ -277,12 +400,12 @@ export default function Hero() {
               </div>
 
               {/* Terminal status */}
-              <div className="flex items-center justify-between border-t border-white/10 px-5 py-3">
-                <span className="font-mono text-[9px] font-medium uppercase tracking-[0.14em] text-white/50">
+              <div className="flex items-center justify-between gap-4 border-t border-white/10 px-4 py-3 sm:px-5">
+                <span className="font-mono text-[8px] font-medium uppercase tracking-[0.12em] text-white/50 sm:text-[9px] sm:tracking-[0.14em]">
                   TypeScript · Strict
                 </span>
 
-                <span className="flex items-center gap-2 font-mono text-[9px] font-medium uppercase tracking-[0.14em] text-white/60">
+                <span className="flex shrink-0 items-center gap-2 font-mono text-[8px] font-medium uppercase tracking-[0.12em] text-white/60 sm:text-[9px] sm:tracking-[0.14em]">
                   <span className="h-1.5 w-1.5 rounded-full bg-lime-300 shadow-[0_0_8px_rgba(216,255,62,0.7)]" />
 
                   System online
@@ -331,4 +454,3 @@ export default function Hero() {
     </section>
   );
 }
-
